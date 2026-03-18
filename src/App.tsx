@@ -338,9 +338,38 @@ export default function App() {
           box-shadow: 0 0 80px rgba(200,168,75,0.25);
         }
         .preserve-3d { transform-style: preserve-3d; }
-        .backface-hidden { backface-visibility: hidden; }
-        .rotate-y-180 { transform: rotateY(180deg); }
-        .col-list-item { transition: all 0.25s; }
+.backface-hidden { backface-visibility: hidden; -webkit-backface-visibility: hidden; }
+.rotate-y-180 { transform: rotateY(180deg); }
+
+.flip-card {
+  perspective: 800px;
+}
+
+.flip-inner {
+  transform-style: preserve-3d;
+  transition: transform 800ms;
+}
+
+.flip-card:hover .flip-inner {
+  transform: rotateY(180deg);
+}
+        .flip-card {
+  perspective: 800px;
+}
+
+.flip-inner {
+  transform-style: preserve-3d;
+  transition: transform 800ms;
+}
+
+.flip-card:hover .flip-inner {
+  transform: rotateY(180deg);
+}
+
+.backface-hidden {
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
         .col-list-item.active { border-color: var(--gold); background: rgba(200,168,75,0.1); }
       `,
         }}
@@ -789,8 +818,8 @@ export default function App() {
           </div>
 
           <div className="grid md:grid-cols-2 gap-16 items-center">
-            <div className="mx-auto w-[320px] perspective-[800px]">
-              <div className="relative w-full h-[320px] rounded-full preserve-3d transition-transform duration-[800ms] hover:rotate-y-180 cursor-pointer shadow-2xl">
+            <div className="mx-auto w-[320px] flip-card">
+  <div className="relative w-full h-[320px] rounded-full flip-inner cursor-pointer shadow-2xl">
                 
                 {/* FRONT */}
                 <div className="absolute inset-0 backface-hidden rounded-full border-[3px] border-[#E8A84B] overflow-hidden p-0 bg-[radial-gradient(circle,#C24A1E_0%,#8B300E_100%)] flex items-center justify-center">
