@@ -774,110 +774,114 @@ export default function App() {
         </div>
       </section>
 
+      {/* --- STAMP BACK CONCEPT --- */}
       <section id="design" className="py-24 bg-[#181825] border-t border-[#C8A84B]/10">
         <div className="max-w-7xl mx-auto px-6">
           <div>
-            <div className="text-[11px] font-bold tracking-[0.18em] uppercase text-[#C8A84B] mb-2">Design System</div>
-            <h2 className="font-display text-4xl leading-[1.15] mb-12">Front &amp; Back —<br />A Complete Collectible</h2>
+            <div className="text-[11px] font-bold tracking-[0.18em] uppercase text-[#C8A84B] mb-2">
+              Design System
+            </div>
+            <h2 className="font-display text-4xl leading-[1.15] mb-12">
+              Front &amp; Back —
+              <br />
+              A Complete Collectible
+            </h2>
           </div>
 
           <div className="grid md:grid-cols-2 gap-16 items-center">
             <div className="mx-auto w-[320px] perspective-[800px]">
               <div className="relative w-full h-[320px] rounded-full preserve-3d transition-transform duration-[800ms] hover:rotate-y-180 cursor-pointer shadow-2xl">
-<div className="absolute inset-0 backface-hidden rotate-y-180 rounded-full border-[3px] border-[#E8A84B] overflow-hidden p-0 bg-[#3A0F02] flex items-center justify-center">
-  <FallbackImage
-    src="/Marrakech-back.png"
-    alt="Marrakech stamp back"
-    className="w-full h-full object-cover rounded-full"
-    fallbackNode={
-      <div className="w-full h-full flex flex-col items-center justify-center text-center p-7 bg-[radial-gradient(circle,#5A1A06_0%,#3A0F02_100%)]">
-        <div className="absolute inset-1.5 rounded-full border border-dashed border-[#E8A84B]/30 pointer-events-none"></div>
-        <div className="absolute inset-3.5 rounded-full border border-[#E8A84B]/15 pointer-events-none"></div>
-
-        <div className="text-4xl opacity-60 mb-2">🏛️</div>
-        <div className="font-display text-[12px] tracking-[0.12em] text-[#E8A84B] uppercase font-bold leading-snug">
-          Medina of
-          <br />
-          Marrakech
-        </div>
-        <div className="w-10 h-px bg-[#E8A84B]/40 my-2"></div>
-        <div className="text-xl text-[#E8A84B] font-display mb-1">1985</div>
-        <div className="text-[9px] tracking-[0.15em] text-[#E8A84B]/60 uppercase">
-          Cultural World Heritage
-        </div>
-        <div className="w-10 h-px bg-[#E8A84B]/40 my-2"></div>
-        <div className="font-display italic text-[10px] text-[#E8C8A0]/70 leading-relaxed max-w-[160px]">
-          "Where the ancient souks whisper tales older than time."
-        </div>
-        <div className="w-10 h-px bg-[#E8A84B]/40 my-2"></div>
-        <div className="text-[9px] tracking-[0.1em] text-[#E8A84B]/50 uppercase mt-1">
-          WORLDMARKS · SOLANA
-        </div>
-        <div className="text-[9px] tracking-[0.1em] text-[#E8A84B]/50 uppercase mt-1">
-          #0142 / 5,000 · Series I
-        </div>
-      </div>
-    }
-  />
-</div>                  <FallbackImage
+                
+                {/* FRONT */}
+                <div className="absolute inset-0 backface-hidden rounded-full border-[3px] border-[#E8A84B] overflow-hidden p-0 bg-[radial-gradient(circle,#C24A1E_0%,#8B300E_100%)] flex items-center justify-center">
+                  <FallbackImage
                     src="/Marrakech.png"
                     alt="Marrakech stamp front"
                     className="w-full h-full object-cover rounded-full"
                     fallbackNode={
                       <div className="w-[82%] aspect-square rounded-full border-[3px] border-[#E8A84B] flex flex-col items-center justify-center relative p-3 text-center mx-auto">
                         <div className="absolute inset-[5px] rounded-full border border-dashed border-[#C8A84B]/30 pointer-events-none"></div>
-                        <div className="absolute top-[16%] text-[#C8A84B] font-display text-[9px] tracking-[0.15em] font-bold uppercase">CITY OF MARRAKECH</div>
+                        <div className="absolute top-[16%] text-[#C8A84B] font-display text-[9px] tracking-[0.15em] font-bold uppercase">
+                          CITY OF MARRAKECH
+                        </div>
                         <div className="text-5xl mb-1 sepia-[0.3]">🕌</div>
-                        <div className="font-display text-[11px] text-[#E8A84B] tracking-[0.12em] uppercase font-bold">Marrakech</div>
-                        <div className="text-[7px] text-[#E8A84B]/70 tracking-[0.08em] uppercase mt-1">Embrace The Magic</div>
-                        <div className="absolute bottom-[14%] text-[7px] text-[#E8A84B] tracking-[0.06em]">31.6311°N 7.9811°W</div>
+                        <div className="font-display text-[11px] text-[#E8A84B] tracking-[0.12em] uppercase font-bold">
+                          Marrakech
+                        </div>
+                        <div className="text-[7px] text-[#E8A84B]/70 tracking-[0.08em] uppercase mt-1">
+                          Embrace The Magic
+                        </div>
+                        <div className="absolute bottom-[14%] text-[7px] text-[#E8A84B] tracking-[0.06em]">
+                          31.6311°N 7.9811°W
+                        </div>
                       </div>
                     }
                   />
                 </div>
 
-                <div className="absolute inset-0 backface-hidden rotate-y-180 rounded-full bg-[radial-gradient(circle,#5A1A06_0%,#3A0F02_100%)] border-[3px] border-[#E8A84B] flex flex-col items-center justify-center p-7 text-center">
-                  <div className="absolute inset-1.5 rounded-full border border-dashed border-[#E8A84B]/30 pointer-events-none"></div>
-                  <div className="absolute inset-3.5 rounded-full border border-[#E8A84B]/15 pointer-events-none"></div>
+                {/* BACK */}
+                <div className="absolute inset-0 backface-hidden rotate-y-180 rounded-full border-[3px] border-[#E8A84B] overflow-hidden p-0 bg-[#3A0F02] flex items-center justify-center">
+                  <FallbackImage
+                    src="/Marrakech-back.png"
+                    alt="Marrakech stamp back"
+                    className="w-full h-full object-cover rounded-full"
+                    fallbackNode={
+                      <div className="w-full h-full flex flex-col items-center justify-center text-center p-7 bg-[radial-gradient(circle,#5A1A06_0%,#3A0F02_100%)] relative">
+                        <div className="absolute inset-1.5 rounded-full border border-dashed border-[#E8A84B]/30 pointer-events-none"></div>
+                        <div className="absolute inset-3.5 rounded-full border border-[#E8A84B]/15 pointer-events-none"></div>
 
-                  <div className="text-4xl opacity-60 mb-2">🏛️</div>
-                  <div className="font-display text-[12px] tracking-[0.12em] text-[#E8A84B] uppercase font-bold leading-snug">Medina of<br />Marrakech</div>
-                  <div className="w-10 h-px bg-[#E8A84B]/40 my-2"></div>
-                  <div className="text-xl text-[#E8A84B] font-display mb-1">1985</div>
-                  <div className="text-[9px] tracking-[0.15em] text-[#E8A84B]/60 uppercase">Cultural World Heritage</div>
-                  <div className="w-10 h-px bg-[#E8A84B]/40 my-2"></div>
-                  <div className="font-display italic text-[10px] text-[#E8C8A0]/70 leading-relaxed max-w-[160px]">"Where the ancient souks whisper tales older than time."</div>
-                  <div className="w-10 h-px bg-[#E8A84B]/40 my-2"></div>
-                  <div className="text-[9px] tracking-[0.1em] text-[#E8A84B]/50 uppercase mt-1">WORLDMARKS · SOLANA</div>
-                  <div className="text-[9px] tracking-[0.1em] text-[#E8A84B]/50 uppercase mt-1">#0142 / 5,000 · Series I</div>
+                        <div className="text-4xl opacity-60 mb-2">🏛️</div>
+                        <div className="font-display text-[12px] tracking-[0.12em] text-[#E8A84B] uppercase font-bold leading-snug">
+                          Medina of
+                          <br />
+                          Marrakech
+                        </div>
+                        <div className="w-10 h-px bg-[#E8A84B]/40 my-2"></div>
+                        <div className="text-xl text-[#E8A84B] font-display mb-1">1985</div>
+                        <div className="text-[9px] tracking-[0.15em] text-[#E8A84B]/60 uppercase">
+                          Cultural World Heritage
+                        </div>
+                        <div className="w-10 h-px bg-[#E8A84B]/40 my-2"></div>
+                        <div className="font-display italic text-[10px] text-[#E8C8A0]/70 leading-relaxed max-w-[160px]">
+                          "Where the ancient souks whisper tales older than time."
+                        </div>
+                        <div className="w-10 h-px bg-[#E8A84B]/40 my-2"></div>
+                        <div className="text-[9px] tracking-[0.1em] text-[#E8A84B]/50 uppercase mt-1">
+                          WORLDMARKS · SOLANA
+                        </div>
+                        <div className="text-[9px] tracking-[0.1em] text-[#E8A84B]/50 uppercase mt-1">
+                          #0142 / 5,000 · Series I
+                        </div>
+                      </div>
+                    }
+                  />
                 </div>
               </div>
-              <div className="text-center text-xs text-[#7A7A9A] tracking-wider mt-5">Hover to reveal the back →</div>
+
+              <div className="text-center text-xs text-[#7A7A9A] tracking-wider mt-5">
+                Hover to reveal the back →
+              </div>
             </div>
 
             <div>
               <h3 className="font-display text-2xl mb-4 text-[#F0EEE8]">The Back of Every Stamp</h3>
               <p className="text-[#7A7A9A] leading-relaxed mb-6 text-[15px]">
                 Each stamp comes with a richly designed reverse — as thoughtfully crafted as the front.
-                Matching the city's signature color, the back carries the full heritage context of the site.
+                Matching the city&apos;s signature color, the back carries the full heritage context of the site.
               </p>
               <ul className="space-y-3">
                 {[
-                  'Heritage Site Name — The globally recognized property inscription title',
-                  'Inscription Year — When the site was formally recognized',
+                  'Heritage Site Name — The exact UNESCO property inscription title',
+                  'Inscription Year — When UNESCO recognized the site',
                   'Heritage Category — Cultural, Natural, or Mixed property',
                   'Poetic Inscription — A unique phrase evoking the spirit of the place',
-                  'Serial Number — Your edition within the city\'s collection',
-                  'City Geometric Border — Pattern inspired by the region\'s visual heritage',
+                  'Serial Number — Your edition within the city collection',
+                  'City Geometric Border — Pattern inspired by the region visual heritage',
                   'On-chain Provenance — Full metadata stored on Arweave / IPFS',
                 ].map((feature, idx) => (
                   <li key={idx} className="flex items-start gap-3 text-sm text-[#7A7A9A]">
                     <span className="text-[#C8A84B] text-[10px] mt-1">◆</span>
-                    <span
-                      dangerouslySetInnerHTML={{
-                        __html: feature.replace('—', '</strong>—').replace(/^([^—]+)/, '<strong>$1'),
-                      }}
-                    />
+                    <span>{feature}</span>
                   </li>
                 ))}
               </ul>
