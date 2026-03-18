@@ -784,8 +784,42 @@ export default function App() {
           <div className="grid md:grid-cols-2 gap-16 items-center">
             <div className="mx-auto w-[320px] perspective-[800px]">
               <div className="relative w-full h-[320px] rounded-full preserve-3d transition-transform duration-[800ms] hover:rotate-y-180 cursor-pointer shadow-2xl">
-                <div className="absolute inset-0 backface-hidden rounded-full border-[3px] border-[#E8A84B] overflow-hidden p-0 bg-[radial-gradient(circle,#C24A1E_0%,#8B300E_100%)] flex items-center justify-center">
-                  <FallbackImage
+<div className="absolute inset-0 backface-hidden rotate-y-180 rounded-full border-[3px] border-[#E8A84B] overflow-hidden p-0 bg-[#3A0F02] flex items-center justify-center">
+  <FallbackImage
+    src="/Marrakech-back.png"
+    alt="Marrakech stamp back"
+    className="w-full h-full object-cover rounded-full"
+    fallbackNode={
+      <div className="w-full h-full flex flex-col items-center justify-center text-center p-7 bg-[radial-gradient(circle,#5A1A06_0%,#3A0F02_100%)]">
+        <div className="absolute inset-1.5 rounded-full border border-dashed border-[#E8A84B]/30 pointer-events-none"></div>
+        <div className="absolute inset-3.5 rounded-full border border-[#E8A84B]/15 pointer-events-none"></div>
+
+        <div className="text-4xl opacity-60 mb-2">🏛️</div>
+        <div className="font-display text-[12px] tracking-[0.12em] text-[#E8A84B] uppercase font-bold leading-snug">
+          Medina of
+          <br />
+          Marrakech
+        </div>
+        <div className="w-10 h-px bg-[#E8A84B]/40 my-2"></div>
+        <div className="text-xl text-[#E8A84B] font-display mb-1">1985</div>
+        <div className="text-[9px] tracking-[0.15em] text-[#E8A84B]/60 uppercase">
+          Cultural World Heritage
+        </div>
+        <div className="w-10 h-px bg-[#E8A84B]/40 my-2"></div>
+        <div className="font-display italic text-[10px] text-[#E8C8A0]/70 leading-relaxed max-w-[160px]">
+          "Where the ancient souks whisper tales older than time."
+        </div>
+        <div className="w-10 h-px bg-[#E8A84B]/40 my-2"></div>
+        <div className="text-[9px] tracking-[0.1em] text-[#E8A84B]/50 uppercase mt-1">
+          WORLDMARKS · SOLANA
+        </div>
+        <div className="text-[9px] tracking-[0.1em] text-[#E8A84B]/50 uppercase mt-1">
+          #0142 / 5,000 · Series I
+        </div>
+      </div>
+    }
+  />
+</div>                  <FallbackImage
                     src="/Marrakech.png"
                     alt="Marrakech stamp front"
                     className="w-full h-full object-cover rounded-full"
