@@ -251,18 +251,16 @@ export default function App() {
   const [mintModalOpen, setMintModalOpen] = useState(false);
   const [selectedCity, setSelectedCity] = useState('');
 
-  const [activeCollectionId, setActiveCollectionId] = useState('marrakech');
+    const [activeCollectionId, setActiveCollectionId] = useState('marrakech');
   const [activeFilter, setActiveFilter] = useState('all');
   const [explorerPage, setExplorerPage] = useState(1);
   const [emailJoined, setEmailJoined] = useState(false);
   const [emailInput, setEmailInput] = useState('');
-  const [progressLoaded, setProgressLoaded] = useState(false);
   const PAGE_SIZE = 18;
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 60);
     window.addEventListener('scroll', handleScroll);
-    setTimeout(() => setProgressLoaded(true), 500);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
