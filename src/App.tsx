@@ -423,7 +423,7 @@ export default function App() {
       </nav>
 
       {/* ═══════ HERO ═══════ */}
-      <section className="relative min-h-screen flex items-center justify-center pt-24 overflow-hidden">
+      <section className="relative min-h-screen flex items-center justify-center pt-24 pb-12 overflow-hidden">
         <div className="absolute inset-0 hero-bg"></div>
         <div className="absolute inset-0 hero-grid"></div>
         <div className="relative z-10 text-center w-full max-w-5xl px-6 mx-auto">
@@ -432,16 +432,42 @@ export default function App() {
             Digital Collectibles &middot; Supporting Heritage Preservation
           </div>
 
-          <h1 className="font-display text-5xl md:text-7xl leading-[1.1] tracking-tight mb-6">
-            Collect the World's<br /><em className="italic" style={{ color: gold }}>Greatest Places</em>
+          <h1 className="font-display text-4xl sm:text-5xl md:text-7xl leading-[1.1] tracking-tight mb-6">
+            Collect <span style={{ color: gold }}>NFT</span> of the World's<br />Greatest Places
           </h1>
 
-          <p className="text-lg md:text-xl max-w-2xl mx-auto mb-10 leading-relaxed" style={{ color: tx2 }}>
-            Each WORLDMARKS collectible is a hand-crafted digital stamp honouring a globally recognised World Heritage Site.
-            Beautiful art. Timeless places. Every purchase supports heritage preservation worldwide.
+          <p className="text-base sm:text-lg md:text-xl max-w-2xl mx-auto mb-10 leading-relaxed" style={{ color: tx2 }}>
+            Hand-crafted digital stamps honouring UNESCO World Heritage Sites.
+            Beautiful art. Timeless places. Every purchase supports heritage preservation.
           </p>
 
-          <div className="flex flex-wrap justify-center gap-4 mb-16">
+          {/* ── BIG HERO COIN — flips on hover ── */}
+          <div className="flex justify-center mb-10">
+            <div className="flip-coin w-[240px] h-[240px] sm:w-[300px] sm:h-[300px] md:w-[380px] md:h-[380px] lg:w-[420px] lg:h-[420px] cursor-pointer" onClick={() => document.getElementById('collection')?.scrollIntoView({ behavior: 'smooth' })}>
+              <div className="flip-coin-inner relative w-full h-full">
+                {/* FRONT */}
+                <div className="flip-face absolute inset-0 rounded-full border-[4px] overflow-hidden" style={{ borderColor: goldLight, boxShadow: `0 20px 60px ${gold}44, 0 0 120px ${gold}22` }}>
+                  <FallbackImage
+                    src="/rio-hero.png"
+                    alt="WORLDMARKS Hero Coin"
+                    className="w-full h-full object-cover rounded-full"
+                    fallbackNode={<div className="w-full h-full rounded-full flex items-center justify-center" style={{ background: `radial-gradient(circle, ${gold} 0%, ${bg} 100%)` }}><span className="font-display text-2xl" style={{ color: goldLight }}>WORLDMARKS</span></div>}
+                  />
+                </div>
+                {/* BACK */}
+                <div className="flip-face flip-back absolute inset-0 rounded-full border-[4px] overflow-hidden" style={{ borderColor: goldLight, boxShadow: `0 20px 60px ${gold}44, 0 0 120px ${gold}22` }}>
+                  <FallbackImage
+                    src="/rio-hero-verso.png"
+                    alt="WORLDMARKS Hero Coin Back"
+                    className="w-full h-full object-cover rounded-full"
+                    fallbackNode={<div className="w-full h-full rounded-full flex items-center justify-center" style={{ background: `radial-gradient(circle, ${gold} 0%, ${bg} 100%)` }}><span className="font-display text-2xl" style={{ color: goldLight }}>VERSO</span></div>}
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div className="flex flex-wrap justify-center gap-4 mb-12">
             <button onClick={() => setPaymentModalOpen(true)} className="px-8 py-3.5 rounded-xl font-bold tracking-wide border hover:-translate-y-0.5 hover:shadow-[0_8px_30px_rgba(200,168,75,0.3)] transition-all" style={{ background: gold, color: '#0A0A0F', borderColor: goldLight }}>
               Buy NFT &mdash; From $25
             </button>
@@ -450,28 +476,31 @@ export default function App() {
             </a>
           </div>
 
-          {/* Hero stamps — 6 flip coins */}
-          <div className="grid grid-cols-3 md:grid-cols-6 gap-3 sm:gap-4 md:gap-6 justify-items-center relative mx-auto w-full">
+          {/* Small tier coins row */}
+          <div className="grid grid-cols-6 gap-2 sm:gap-3 md:gap-5 justify-items-center max-w-xl mx-auto">
             {RIO_TIERS.map((tier, i) => (
               <div
                 key={tier.id}
-                className="stamp-float flip-coin w-[90px] h-[90px] sm:w-[115px] sm:h-[115px] lg:w-[130px] lg:h-[130px] cursor-pointer shrink-0"
-                style={{ animationDelay: `${i * 0.2}s` }}
+                className="flip-coin w-[48px] h-[48px] sm:w-[60px] sm:h-[60px] md:w-[72px] md:h-[72px] cursor-pointer"
                 onClick={() => { setSelectedTierId(tier.id); document.getElementById('collection')?.scrollIntoView({ behavior: 'smooth' }); }}
               >
                 <div className="flip-coin-inner relative w-full h-full">
-                  {/* FRONT */}
-                  <div className="flip-face absolute inset-0 rounded-full border-[3px] overflow-hidden" style={{ borderColor: tier.borderColor, boxShadow: `0 8px 30px ${tier.color}66` }}>
+                  <div className="flip-face absolute inset-0 rounded-full border-2 overflow-hidden" style={{ borderColor: tier.borderColor, boxShadow: `0 4px 15px ${tier.color}44` }}>
                     <FallbackImage src={tier.img} alt={tier.name} className="w-full h-full object-cover rounded-full" fallbackNode={colorFallback(tier.color, tier.name)} />
-                    <div className="absolute bottom-1 sm:bottom-2 left-1/2 -translate-x-1/2 text-[7px] sm:text-[9px] font-bold tracking-widest uppercase px-2 py-0.5 rounded-full bg-black/60 text-white/90 whitespace-nowrap">{tier.name}</div>
                   </div>
-                  {/* BACK */}
-                  <div className="flip-face flip-back absolute inset-0 rounded-full border-[3px] overflow-hidden" style={{ borderColor: tier.borderColor, boxShadow: `0 8px 30px ${tier.color}66` }}>
+                  <div className="flip-face flip-back absolute inset-0 rounded-full border-2 overflow-hidden" style={{ borderColor: tier.borderColor, boxShadow: `0 4px 15px ${tier.color}44` }}>
                     <FallbackImage src={tier.backImg} alt={`${tier.name} back`} className="w-full h-full object-cover rounded-full" fallbackNode={colorFallback(tier.color, 'VERSO')} />
-                    <div className="absolute bottom-1 sm:bottom-2 left-1/2 -translate-x-1/2 text-[7px] sm:text-[9px] font-bold tracking-widest uppercase px-2 py-0.5 rounded-full bg-black/60 text-white/90 whitespace-nowrap">${tier.price}</div>
                   </div>
                 </div>
               </div>
+            ))}
+          </div>
+          <div className="mt-3 flex justify-center gap-4 text-[9px] sm:text-[10px] tracking-widest uppercase" style={{ color: tx2 }}>
+            {RIO_TIERS.map((tier) => (
+              <span key={tier.id} className="flex items-center gap-1">
+                <span className="w-2 h-2 rounded-full inline-block" style={{ background: tier.color }}></span>
+                {tier.name}
+              </span>
             ))}
           </div>
         </div>
@@ -628,15 +657,15 @@ export default function App() {
       </section>
 
       {/* ═══════ DONATION TRANSPARENCY ═══════ */}
-      <section id="donations" className="py-24" style={{ background: bg2, borderTop: `1px solid ${bd}` }}>
-        <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-16 items-start">
+      <section id="donations" className="py-16 md:py-24" style={{ background: bg2, borderTop: `1px solid ${bd}` }}>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-16 items-start">
           <div>
             <div className="text-[11px] font-bold tracking-[0.18em] uppercase mb-2" style={{ color: gold }}>Donation Transparency</div>
-            <h2 className="font-display text-4xl md:text-5xl leading-[1.15]">We Celebrate Cities.<br />We Give to Children.</h2>
-            <p className="mt-4 text-base max-w-[440px] leading-[1.8]" style={{ color: tx2 }}>
+            <h2 className="font-display text-3xl sm:text-4xl md:text-5xl leading-[1.15]">We Celebrate Cities.<br />We Give to Children.</h2>
+            <p className="mt-4 text-sm sm:text-base max-w-[440px] leading-[1.8]" style={{ color: tx2 }}>
               Every purchase includes a donation that goes toward heritage preservation and children's welfare around the world.
             </p>
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mt-6">
+            <div className="grid grid-cols-1 gap-3 mt-6">
               <div className="p-4 border rounded-[14px]" style={{ borderColor: 'rgba(15,82,186,0.3)', background: cardBg }}>
                 <div className="text-xs tracking-[0.1em] uppercase mb-1.5 font-bold text-[#0F52BA]">Crypto Donations</div>
                 <div className="font-display text-lg mb-1" style={{ color: tx }}>UNICEF</div>
@@ -672,7 +701,7 @@ export default function App() {
             )}
           </div>
 
-          <div className="border rounded-[22px] p-7 shadow-2xl" style={{ borderColor: bd, background: cardBg }}>
+          <div className="border rounded-[16px] sm:rounded-[22px] p-4 sm:p-7 shadow-2xl" style={{ borderColor: bd, background: cardBg }}>
             <div className="flex justify-between items-start pb-5 mb-5" style={{ borderBottom: `1px solid ${bd}` }}>
               <div>
                 <div className="text-[11px] font-bold tracking-[0.18em] uppercase mb-1" style={{ color: gold }}>Public Ledger</div>
