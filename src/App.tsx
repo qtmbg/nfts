@@ -82,7 +82,7 @@ const FallbackImage = ({ src, alt, className, style, fallbackNode }: FallbackIma
    DATA — RIO DE JANEIRO: 6 COLOR-CODED TIERS
    Images: /public/rio-{tier}.png + rio-{tier}-verso.png
    NOTE: diamond images missing — using emerald placeholder
-   NOTE: sapphire front uses filename 'rio-sappire.png' (typo in file)
+   NOTE: sapphire front uses filename 'rio-sapphire.png' (typo in file)
    ─────────────────────────────────────────── */
 
 const RIO_TIERS: Tier[] = [
@@ -90,7 +90,7 @@ const RIO_TIERS: Tier[] = [
   { id: 'silver',   name: 'Silver',   price: 50,  color: '#C0C0C0', borderColor: '#D8D8D8', donation: 0.03, editions: 3000, minted: 1800, img: '/rio-silver.png',  backImg: '/rio-silver-verso.png'   },
   { id: 'gold',     name: 'Gold',     price: 75,  color: '#FFD700', borderColor: '#FFE44D', donation: 0.05, editions: 2000, minted: 1100, img: '/rio-gold.png',    backImg: '/rio-gold-verso.png'     },
   { id: 'emerald',  name: 'Emerald',  price: 100, color: '#50C878', borderColor: '#7AE8A0', donation: 0.08, editions: 1000, minted: 480,  img: '/rio-emerald.png', backImg: '/rio-emerald-verso.png'  },
-  { id: 'sapphire', name: 'Sapphire', price: 150, color: '#0F52BA', borderColor: '#4080E0', donation: 0.12, editions: 500,  minted: 190,  img: '/rio-sappire.png', backImg: '/rio-sapphire-verso.png' },
+  { id: 'sapphire', name: 'Sapphire', price: 150, color: '#0F52BA', borderColor: '#4080E0', donation: 0.12, editions: 500,  minted: 190,  img: '/rio-sapphire.png', backImg: '/rio-sapphire-verso.png' },
   { id: 'diamond',  name: 'Diamond',  price: 200, color: '#B9F2FF', borderColor: '#E0F8FF', donation: 0.20, editions: 250,  minted: 60,   img: '/rio-diamond.png', backImg: '/rio-diamond-verso.png'  },
 ];
 
