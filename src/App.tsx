@@ -477,11 +477,11 @@ export default function App() {
           </div>
 
           {/* Small tier coins row */}
-          <div className="grid grid-cols-6 gap-2 sm:gap-3 md:gap-5 justify-items-center max-w-xl mx-auto">
+          <div className="grid grid-cols-6 gap-3 sm:gap-4 md:gap-6 justify-items-center max-w-4xl mx-auto">
             {RIO_TIERS.map((tier) => (
               <div
                 key={tier.id}
-                className="flip-coin w-[48px] h-[48px] sm:w-[60px] sm:h-[60px] md:w-[72px] md:h-[72px] cursor-pointer"
+                className="flip-coin w-[70px] h-[70px] sm:w-[90px] sm:h-[90px] md:w-[110px] md:h-[110px] lg:w-[130px] lg:h-[130px] cursor-pointer"
                 onClick={() => { setSelectedTierId(tier.id); document.getElementById('collection')?.scrollIntoView({ behavior: 'smooth' }); }}
               >
                 <div className="flip-coin-inner relative w-full h-full">
@@ -539,9 +539,9 @@ export default function App() {
         </div>
 
         {/* Tighter 2-col grid */}
-        <div className="grid lg:grid-cols-[0.7fr_1.3fr] gap-5 items-start">
-          {/* LEFT: Tier selector — stacked list */}
-          <div className="flex flex-col gap-2.5">
+        <div className="grid lg:grid-cols-[0.7fr_1.3fr] gap-5 items-stretch">
+          {/* LEFT: Tier selector — stacked list, fills height */}
+          <div className="flex flex-col gap-2.5 justify-between">
             {collection.tiers.map((tier) => (
               <button
                 key={tier.id}
@@ -658,7 +658,7 @@ export default function App() {
 
       {/* ═══════ DONATION TRANSPARENCY ═══════ */}
       <section id="donations" className="py-16 md:py-24" style={{ background: bg2, borderTop: `1px solid ${bd}` }}>
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-16 items-start">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-10 items-stretch">
           <div>
             <div className="text-[11px] font-bold tracking-[0.18em] uppercase mb-2" style={{ color: gold }}>Donation Transparency</div>
             <h2 className="font-display text-3xl sm:text-4xl md:text-5xl leading-[1.15]">We Celebrate Cities.<br />We Give to Children.</h2>
