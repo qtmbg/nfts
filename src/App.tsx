@@ -556,12 +556,14 @@ export default function App() {
         <div className="grid lg:grid-cols-[0.7fr_1.3fr] gap-5 items-stretch">
           {/* LEFT: Tier selector — stacked list, fills height */}
           <div className="flex flex-col gap-2.5 justify-between">
-            {collection.tiers.map((tier) => (
+            {collection.tiers.map((tier) => {
+              const isActive = selectedTierId === tier.id;
+              return (
               <button
                 key={tier.id}
                 onClick={() => setSelectedTierId(tier.id)}
-                className={`tier-card rounded-[14px] border p-3.5 text-left w-full transition-all ${selectedTierId === tier.id ? 'active' : ''}`}
-                style={{ borderColor: selectedTierId === tier.id ? gold : bd, background: selectedTierId === tier.id ? `${gold}18` : bg2 }}
+                className={`tier-card rounded-[14px] border p-3.5 text-left w-full transition-all ${isActive ? 'active' : ''}`}
+                style={{ borderColor: isActive ? gold : bd, background: isActive ? `${gold}18` : bg2 }}
               >
                 <div className="flex justify-between items-center mb-1">
                   <div className="flex items-center gap-2">
@@ -577,8 +579,16 @@ export default function App() {
                 <div className="mt-1.5 h-[3px] rounded-full overflow-hidden" style={{ background: `${gold}20` }}>
                   <div className="h-full rounded-full transition-all duration-500" style={{ width: `${Math.round((tier.minted / tier.editions) * 100)}%`, background: tier.color }}></div>
                 </div>
+                {/* Expanded content when active */}
+                {isActive && (
+                  <div className="mt-3 pt-3" style={{ borderTop: `1px solid ${bd}` }}>
+                    <div className="font-display text-[14px] mb-1.5" style={{ color: tx }}>{tier.landmark}</div>
+                    <p className="text-[12px] leading-[1.7]" style={{ color: tx2 }}>{tier.description}</p>
+                  </div>
+                )}
               </button>
-            ))}
+              );
+            })}
           </div>
 
           {/* RIGHT: Detail card with flip */}
