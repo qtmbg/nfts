@@ -510,9 +510,9 @@ export default function App() {
         </div>
 
         {/* Tighter 2-col grid */}
-        <div className="grid lg:grid-cols-[1fr_1fr] gap-5 items-start">
-          {/* LEFT: Tier selector — 2x3 grid on desktop */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
+        <div className="grid lg:grid-cols-[0.7fr_1.3fr] gap-5 items-start">
+          {/* LEFT: Tier selector — stacked list */}
+          <div className="flex flex-col gap-2.5">
             {collection.tiers.map((tier) => (
               <button
                 key={tier.id}
@@ -542,7 +542,7 @@ export default function App() {
           <div className="sticky top-[90px] flex flex-col gap-4">
             <div className="rounded-[20px] border-[3px] overflow-hidden shadow-2xl transition-all duration-500" style={{ borderColor: selectedTier.color, background: bg2 }}>
               {/* Flip image area */}
-              <div className="detail-flip w-full aspect-[4/3] relative overflow-hidden" style={{ background: cardBg }}>
+              <div className="detail-flip w-full aspect-square relative overflow-hidden" style={{ background: cardBg }}>
                 <div className="detail-flip-inner relative w-full h-full">
                   {/* FRONT */}
                   <div className="flip-face absolute inset-0">
