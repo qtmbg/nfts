@@ -478,7 +478,7 @@ export default function App() {
 
           {/* Small tier coins row */}
           <div className="grid grid-cols-6 gap-2 sm:gap-3 md:gap-5 justify-items-center max-w-xl mx-auto">
-            {RIO_TIERS.map((tier, i) => (
+            {RIO_TIERS.map((tier) => (
               <div
                 key={tier.id}
                 className="flip-coin w-[48px] h-[48px] sm:w-[60px] sm:h-[60px] md:w-[72px] md:h-[72px] cursor-pointer"
