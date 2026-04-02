@@ -40,6 +40,8 @@ type Tier = {
   minted: number;
   img: string;
   backImg: string;
+  landmark: string;
+  description: string;
 };
 
 type CityCollection = {
@@ -86,12 +88,24 @@ const FallbackImage = ({ src, alt, className, style, fallbackNode }: FallbackIma
    ─────────────────────────────────────────── */
 
 const RIO_TIERS: Tier[] = [
-  { id: 'bronze',   name: 'Bronze',   price: 25,  color: '#CD7F32', borderColor: '#E8A060', donation: 0.01, editions: 5000, minted: 3200, img: '/rio-bronze.png',  backImg: '/rio-bronze-verso.png'   },
-  { id: 'silver',   name: 'Silver',   price: 50,  color: '#C0C0C0', borderColor: '#D8D8D8', donation: 0.03, editions: 3000, minted: 1800, img: '/rio-silver.png',  backImg: '/rio-silver-verso.png'   },
-  { id: 'gold',     name: 'Gold',     price: 75,  color: '#FFD700', borderColor: '#FFE44D', donation: 0.05, editions: 2000, minted: 1100, img: '/rio-gold.png',    backImg: '/rio-gold-verso.png'     },
-  { id: 'emerald',  name: 'Emerald',  price: 100, color: '#50C878', borderColor: '#7AE8A0', donation: 0.08, editions: 1000, minted: 480,  img: '/rio-emerald.png', backImg: '/rio-emerald-verso.png'  },
-  { id: 'sapphire', name: 'Sapphire', price: 150, color: '#0F52BA', borderColor: '#4080E0', donation: 0.12, editions: 500,  minted: 190,  img: '/rio-sapphire.png', backImg: '/rio-sapphire-verso.png' },
-  { id: 'diamond',  name: 'Diamond',  price: 200, color: '#B9F2FF', borderColor: '#E0F8FF', donation: 0.20, editions: 250,  minted: 60,   img: '/rio-diamond.png', backImg: '/rio-diamond-verso.png'  },
+  { id: 'bronze',   name: 'Bronze',   price: 25,  color: '#CD7F32', borderColor: '#E8A060', donation: 0.01, editions: 5000, minted: 3200, img: '/rio-bronze.png',  backImg: '/rio-bronze-verso.png',
+    landmark: '\u{1F5FF} Cristo Redentor',
+    description: 'Standing 38 metres tall atop Corcovado Mountain inside Tijuca National Park, Christ the Redeemer was completed in 1931 after nine years of construction. Designed by French-Polish sculptor Paul Landowski and built by Brazilian engineer Heitor da Silva Costa, the Art Deco statue became one of the New Seven Wonders of the World in 2007. Its soapstone and reinforced-concrete form has withstood lightning strikes, tropical storms, and nearly a century of pilgrimage.' },
+  { id: 'silver',   name: 'Silver',   price: 50,  color: '#C0C0C0', borderColor: '#D8D8D8', donation: 0.03, editions: 3000, minted: 1800, img: '/rio-silver.png',  backImg: '/rio-silver-verso.png',
+    landmark: '\u26F0\uFE0F P\u00e3o de A\u00e7\u00facar (Sugarloaf Mountain)',
+    description: 'Rising 396 metres above Guanabara Bay, Sugarloaf is a quartz and granite monolith formed over 600 million years ago during the late Precambrian era. The first cable car ascent was completed in 1912 \u2014 only the third aerial tramway built anywhere in the world. The peak witnessed key moments in Brazilian history, from early Portuguese exploration of the bay in 1502 to its role as a military observation point during the colonial period.' },
+  { id: 'gold',     name: 'Gold',     price: 75,  color: '#FFD700', borderColor: '#FFE44D', donation: 0.05, editions: 2000, minted: 1100, img: '/rio-gold.png',    backImg: '/rio-gold-verso.png',
+    landmark: '\u{1F3D6}\uFE0F Copacabana & Ipanema',
+    description: 'Copacabana\u2019s four-kilometre crescent of sand became world-famous after the Copacabana Palace hotel opened in 1923, drawing international celebrities and diplomats. Its iconic black-and-white Portuguese stone promenade was designed by Roberto Burle Marx. Adjacent Ipanema gained global recognition through the 1962 bossa nova classic \u201CThe Girl from Ipanema,\u201D composed by Ant\u00f4nio Carlos Jobim and Vin\u00edcius de Moraes at the nearby Veloso bar.' },
+  { id: 'emerald',  name: 'Emerald',  price: 100, color: '#50C878', borderColor: '#7AE8A0', donation: 0.08, editions: 1000, minted: 480,  img: '/rio-emerald.png', backImg: '/rio-emerald-verso.png',
+    landmark: '\u{1F3D8}\uFE0F Rocinha',
+    description: 'Established in the 1930s when rural migrants settled the hillside between S\u00e3o Conrado and G\u00e1vea, Rocinha grew into Brazil\u2019s largest favela with an estimated 70,000\u2013100,000 residents. Its vertical urbanisation represents decades of self-built architecture, community organisation, and cultural production. The community has produced notable artists, musicians, and entrepreneurs, and its complex social infrastructure includes schools, clinics, and a thriving local economy.' },
+  { id: 'sapphire', name: 'Sapphire', price: 150, color: '#0F52BA', borderColor: '#4080E0', donation: 0.12, editions: 500,  minted: 190,  img: '/rio-sapphire.png', backImg: '/rio-sapphire-verso.png',
+    landmark: '\u{1F3A8} Escadaria Selar\u00f3n',
+    description: 'Beginning in 1990, Chilean-born artist Jorge Selar\u00f3n dedicated the last 23 years of his life to covering 215 steps connecting Joaquim Silva Street to the convent of Santa Teresa. He affixed over 2,000 tiles sourced from more than 60 countries, transforming a crumbling public staircase into one of the most photographed landmarks in South America. Selar\u00f3n called it \u201Cmy tribute to the Brazilian people,\u201D and the work was never officially commissioned \u2014 it was a singular act of devotion.' },
+  { id: 'diamond',  name: 'Diamond',  price: 200, color: '#B9F2FF', borderColor: '#E0F8FF', donation: 0.20, editions: 250,  minted: 60,   img: '/rio-diamond.png', backImg: '/rio-diamond-verso.png',
+    landmark: '\u{1F52C} Museu do Amanh\u00e3',
+    description: 'Opened in December 2015 at Pra\u00e7a Mau\u00e1 on Rio\u2019s revitalised port waterfront, the Museum of Tomorrow was designed by Spanish architect Santiago Calatrava as part of the Porto Maravilha urban renewal project. The 15,000 m\u00b2 building is engineered for sustainability: its moveable solar spine tracks the sun, rainwater is collected from the bay for cooling, and the structure is designed to return to nature if abandoned. It has welcomed over 4 million visitors since opening.' },
 ];
 
 const COLLECTIONS: CityCollection[] = [
@@ -602,9 +616,9 @@ export default function App() {
 
               <div className="p-5">
                 <div className="text-[11px] mb-1 flex items-center gap-1.5 uppercase tracking-wider" style={{ color: tx2 }}><MapPin className="w-3 h-3" /> {collection.coords}</div>
-                <div className="font-display text-2xl mb-1">{collection.emoji} {collection.city}</div>
-                <div className="text-sm mb-2" style={{ color: tx2 }}>{collection.country} &middot; {collection.category} &middot; UNESCO {collection.year}</div>
-                <p className="text-sm leading-[1.7] mb-4" style={{ color: tx2 }}>{collection.story}</p>
+                <div className="font-display text-2xl mb-1">{selectedTier.landmark}</div>
+                <div className="text-sm mb-2" style={{ color: tx2 }}>{collection.city} &middot; {selectedTier.name} Edition &middot; UNESCO {collection.year}</div>
+                <p className="text-sm leading-[1.7] mb-4" style={{ color: tx2 }}>{selectedTier.description}</p>
 
                 <div className="grid grid-cols-2 gap-2.5 mb-4">
                   {[
